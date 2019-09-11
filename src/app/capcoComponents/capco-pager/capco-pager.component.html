@@ -1,0 +1,34 @@
+
+<div class="capcopageselector">
+    <div class="pagersize"  >
+        <label>Select Page Size</label>
+        <!-- [(ngModel)]="selectedPageSize" -->
+        <select name="selectedPageSize" class="pagersizeselector" [(ngModel)]="selectedPageSize"  (change)="setPagesize(selectedPageSize)">
+            <option *ngFor="let pagesize of capcoPageSizes; let i=index">
+              {{pagesize}}
+            </option>
+        </select>
+    </div>
+
+    <div class="pager">
+        <ul *ngIf="capcoPager.totalPagesCount" class="pagination">
+            <li>
+                <button [disabled]="capcoPager.activepage === 1" class="btn btn-primary" (click)="setcapcoPage(1)"> First</button>
+            </li>
+            <li>
+                <button [disabled]="capcoPager.activepage === 1"  class="btn btn-primary" (click)="setcapcoPage(capcoPager.activepage - 1)"> Prev</button>
+            </li>
+            <li>
+              <button class="btn btn-success"> {{capcoPager.activepage}} of {{capcoPager.totalPagesCount}}</button>
+            </li>
+            <li>
+                <button [disabled]="capcoPager.activepage === capcoPager.totalPagesCount" class="btn btn-primary" (click)="setcapcoPage(capcoPager.activepage + 1)"> Next</button>
+
+            </li>
+            <li>
+                <button [disabled]="capcoPager.activepage === capcoPager.totalPagesCount" class="btn btn-primary" (click)="setcapcoPage(capcoPager.totalPagesCount)"> Last</button>
+            </li>
+          </ul>
+      </div>
+
+</div>

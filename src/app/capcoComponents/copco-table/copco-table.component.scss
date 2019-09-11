@@ -1,0 +1,70 @@
+.caplohamletdiv{
+  width:1200px;
+  height: 500px;
+  overflow:auto;
+  position: relative;
+}
+
+thead th{
+  padding: 10px;
+}
+
+
+.fixeddiv::after {
+  content: "";
+  display: block;
+}
+
+
+.fixed_header{
+  width: 100%;
+  border: 2px;
+  height: 450;;
+  border-width: 2px;
+}
+
+table, th, td{
+  border: 1px solid black;
+}
+
+th{
+  position: sticky;
+  top:0px;
+  background-color: gray;
+}
+
+tfoot td{
+  position: sticky;
+  bottom:0px;
+}
+
+
+tr th:nth-child(1){
+width: 120px;
+z-index: 6;
+position: sticky;
+left:0px;
+top:0px;
+}
+
+
+tr td:nth-child(1){
+  width: 120px;
+  background-color: gray;
+  position: sticky;
+  left:0px;
+}
+
+.pager{
+width: 100%;
+position: relative;
+bottom:0px;
+z-index: 10;
+/* margin-top:5px; */
+}
+
+.pagerfooter{
+margin: auto;
+position: relative;
+}
+

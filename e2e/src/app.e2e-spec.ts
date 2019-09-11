@@ -13,11 +13,10 @@ describe('workspace-project App', () => {
     expect(page.getTitleText()).toEqual('CopcoTable app is running!');
   });
 
-  afterEach(async () => {
-    // Assert that there are no errors emitted from the browser
-    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(jasmine.objectContaining({
-      level: logging.Level.SEVERE,
-    } as logging.Entry));
+
+  it('should display page size selection', () => {
+    page.navigateTo();
+    expect(page.getSelectOption(1)).toEqual(' 10 ');
+    expect(page.getSelectOption(2)).toEqual(' 25 ');
   });
 });

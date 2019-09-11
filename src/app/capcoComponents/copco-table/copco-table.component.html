@@ -1,0 +1,46 @@
+
+<div class="capcoexercise">
+
+    <div class="toptext">
+        <p>
+            A web page is not like a book. The size of a book limits how much content can fill a page, but a web page has infinite height and can hold or load as much content as the website can handle. The only drawback to putting too much content on a page is that it can make the site load slower.
+
+            However, most sites have enough bandwidth to support showing more content per page without compromising the loading time. The problem is that most sites show users very little content with short pages. By making your pages longer without compromising loading speed, users will get more content per page and won’t have to click the pagination as much. They’ll be able to easily scroll to see more content faster.
+        </p>
+
+
+      </div>
+      <div class="fixeddiv">
+          <div class="caplohamletdiv" *ngIf="totalcapcosampledata > 0">
+
+              <table class="fixed_header">
+                <thead>
+                  <tr>
+                      <th *ngFor="let colname of columns">
+
+                            {{colname| titlecase}}
+
+                        </th>
+                        <th>Action
+
+                        </th>
+                  </tr>
+
+                </thead>
+                  <tbody>
+                      <tr *ngFor="let sample of selectedSampledata; let i = index">
+                          <td *ngFor="let colname of columns">
+                              {{sample[colname]}}
+                          </td>
+                          <td>
+                            <button class="btn btn-primary btn-sm" (click)="submit(sample)">Select</button>
+                          </td>
+                        </tr>
+                  </tbody>
+                  </table>
+
+          </div>
+          <div class="pager">
+              <app-capco-pager class="pagerfooter"  [totalcapcosampledata]="totalcapcosampledata"></app-capco-pager>
+          </div>
+      </div>

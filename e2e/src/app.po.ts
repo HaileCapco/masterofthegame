@@ -8,4 +8,13 @@ export class AppPage {
   getTitleText() {
     return element(by.css('app-root .content span')).getText() as Promise<string>;
   }
+
+
+  getSelectOption(selectedoption) {
+    let selector = 'select option:nth-child(' + selectedoption + ')';
+
+    return element(by.css(selector)).getText() as Promise<string>;
+
+  }
+
 }
